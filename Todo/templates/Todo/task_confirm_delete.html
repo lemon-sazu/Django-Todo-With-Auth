@@ -1,6 +1,18 @@
-<form action="" method="post">
-    {% csrf_token %}
-    <h2>Task: {{task}}</h2>
-    <p>Are you sure to Delete?</p>
-    <button type="submit">Delete</button>
-</form>
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="header-bar">
+
+    <a href="{% url 'tasks' %}">&#8592 Back</a>
+
+</div>
+<div class="card-body">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure to Delete? "{{task}}"</p>
+        <button class="button" type="submit">Delete</button>
+    </form>
+</div>
+
+
+{% endblock content %}
